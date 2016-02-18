@@ -12,8 +12,8 @@
 	$.fn.jRating = function(op) {
 		var defaults = {
 			/** String vars **/
-			bigStarsPath : 'assets/images/stars.png', // path of the icon stars.png
-			smallStarsPath : 'assets/images/small.png', // path of the icon small.png
+			bigStarsPath : '/assets/images/stars.png', // path of the icon stars.png
+			smallStarsPath : '/assets/images/small.png', // path of the icon small.png
 			phpPath : 'php/jRating.php', // path of the php file jRating.php
 			type : 'big', // can be set to 'small' or 'big'
 
@@ -149,6 +149,8 @@
 					e.preventDefault();
 					var rate = getNote(newWidth);
 					average.width(newWidth);
+					
+
 
 					$.post(opts.phpPath,{
 							idBox : idBox,
@@ -158,7 +160,9 @@
 						function(data) {
 							if(!data.error)
 							{
-								
+
+
+
 								/** Here you can display an alert box, 
 									or use the jNotify Plugin :) http://www.myqjqueryplugins.com/jNotify
 									exemple :	*/
@@ -166,6 +170,7 @@
 							}
 							else
 							{
+
 
 								/** Here you can display an alert box, 
 									or use the jNotify Plugin :) http://www.myqjqueryplugins.com/jNotify
